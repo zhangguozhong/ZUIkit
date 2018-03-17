@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "ZUIKit.h"
+#import "NSObject+ZRunAtDealloc.h"
 
 @interface ViewController ()
 
@@ -30,6 +31,12 @@
     testView.frame = CGRectMake(0, 150, 200, 40);
     testView.backgroundColor = [UIColor orangeColor];
     [self.view addSubview:testView];
+    
+    
+    NSObject *object = [[NSObject alloc] init];
+    [object bk_runAtDealloc:^{
+        NSLog(@"哎呀！对象被释放掉了！");
+    }];
 }
 
 
