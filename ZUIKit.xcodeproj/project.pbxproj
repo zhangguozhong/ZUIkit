@@ -67,6 +67,7 @@
 		77840FB1205C11770099740B /* ZUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				77840FC9205C12000099740B /* BlockKit */,
 				77840FC8205C11EB0099740B /* Utils */,
 				77840FB2205C11770099740B /* AppDelegate.h */,
 				77840FB3205C11770099740B /* AppDelegate.m */,
@@ -84,7 +85,6 @@
 		77840FC8205C11EB0099740B /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				77840FC9205C12000099740B /* BlockKit */,
 				77840FCD205C12560099740B /* ZUIKit.h */,
 				77840FCE205C12560099740B /* ZUIKit.m */,
 			);
