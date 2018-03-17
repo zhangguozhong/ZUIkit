@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ZUIKit"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "封装系统控件的初始化方法，便于纯代码界面开发复用."
 
   # This description is used to generate tags and improve search results.
@@ -91,7 +91,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "ZUIKit/Utils", "ZUIKit/Utils/**/*.{h,m}"
+  s.source_files  = "ZUIKit/Utils/**/*"
   s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
@@ -136,7 +136,7 @@ Pod::Spec.new do |s|
   # s.dependency "JSONKit", "~> 1.4"
 
   s.subspec 'BlockKit' do |b|
-    b.source_files = 'ZUIKit/Utils/BlockKit/**/*.{h,m}'
+    b.source_files = 'ZUIKit/BlockKit/**/*.{h,m}'
   end
 
 
