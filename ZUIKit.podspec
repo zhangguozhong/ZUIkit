@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ZUIKit"
-  s.version      = "1.0.2"
+  s.version      = "1.0.3"
   s.summary      = "封装系统控件的初始化方法，便于纯代码界面开发复用."
 
   # This description is used to generate tags and improve search results.
@@ -135,8 +135,8 @@ Pod::Spec.new do |s|
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
 
-  s.subspec 'BlockKit' do |b|
-    b.source_files = 'ZUIKit/BlockKit/**/*.{h,m}'
+  s.subspec 'BlocksKit' do |b|
+    b.source_files = 'ZUIKit/BlocksKit/**/*.{h,m}'
   end
 
 
