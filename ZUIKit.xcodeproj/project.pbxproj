@@ -7,23 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		772150E0205CFB440071F7E1 /* UIGestureRecognizer+BlockKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 772150DF205CFB440071F7E1 /* UIGestureRecognizer+BlockKit.m */; };
-		77215105205D1E710071F7E1 /* NSObject+ZRunAtDealloc.m in Sources */ = {isa = PBXBuildFile; fileRef = 77215104205D1E710071F7E1 /* NSObject+ZRunAtDealloc.m */; };
+		772150E0205CFB440071F7E1 /* UIGestureRecognizer+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 772150DF205CFB440071F7E1 /* UIGestureRecognizer+BlocksKit.m */; };
+		77215105205D1E710071F7E1 /* NSObject+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 77215104205D1E710071F7E1 /* NSObject+BlocksKit.m */; };
 		77840FB4205C11770099740B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77840FB3205C11770099740B /* AppDelegate.m */; };
 		77840FB7205C11770099740B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77840FB6205C11770099740B /* ViewController.m */; };
 		77840FBA205C11770099740B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77840FB8205C11770099740B /* Main.storyboard */; };
 		77840FBC205C11770099740B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77840FBB205C11770099740B /* Assets.xcassets */; };
 		77840FBF205C11770099740B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77840FBD205C11770099740B /* LaunchScreen.storyboard */; };
 		77840FC2205C11770099740B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 77840FC1205C11770099740B /* main.m */; };
-		77840FCC205C12250099740B /* UIControl+BlockKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 77840FCB205C12250099740B /* UIControl+BlockKit.m */; };
+		77840FCC205C12250099740B /* UIControl+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 77840FCB205C12250099740B /* UIControl+BlocksKit.m */; };
 		77840FCF205C12560099740B /* ZUIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 77840FCE205C12560099740B /* ZUIKit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		772150DE205CFB440071F7E1 /* UIGestureRecognizer+BlockKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+BlockKit.h"; sourceTree = "<group>"; };
-		772150DF205CFB440071F7E1 /* UIGestureRecognizer+BlockKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+BlockKit.m"; sourceTree = "<group>"; };
-		77215103205D1E710071F7E1 /* NSObject+ZRunAtDealloc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+ZRunAtDealloc.h"; sourceTree = "<group>"; };
-		77215104205D1E710071F7E1 /* NSObject+ZRunAtDealloc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ZRunAtDealloc.m"; sourceTree = "<group>"; };
+		772150DE205CFB440071F7E1 /* UIGestureRecognizer+BlocksKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+BlocksKit.h"; sourceTree = "<group>"; };
+		772150DF205CFB440071F7E1 /* UIGestureRecognizer+BlocksKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+BlocksKit.m"; sourceTree = "<group>"; };
+		77215103205D1E710071F7E1 /* NSObject+BlocksKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+BlocksKit.h"; sourceTree = "<group>"; };
+		77215104205D1E710071F7E1 /* NSObject+BlocksKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BlocksKit.m"; sourceTree = "<group>"; };
 		77840FAF205C11770099740B /* ZUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77840FB2205C11770099740B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		77840FB3205C11770099740B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -34,8 +34,8 @@
 		77840FBE205C11770099740B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77840FC0205C11770099740B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77840FC1205C11770099740B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		77840FCA205C12250099740B /* UIControl+BlockKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+BlockKit.h"; sourceTree = "<group>"; };
-		77840FCB205C12250099740B /* UIControl+BlockKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+BlockKit.m"; sourceTree = "<group>"; };
+		77840FCA205C12250099740B /* UIControl+BlocksKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+BlocksKit.h"; sourceTree = "<group>"; };
+		77840FCB205C12250099740B /* UIControl+BlocksKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+BlocksKit.m"; sourceTree = "<group>"; };
 		77840FCD205C12560099740B /* ZUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZUIKit.h; sourceTree = "<group>"; };
 		77840FCE205C12560099740B /* ZUIKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZUIKit.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,12 +97,12 @@
 		77840FC9205C12000099740B /* BlockKit */ = {
 			isa = PBXGroup;
 			children = (
-				77840FCA205C12250099740B /* UIControl+BlockKit.h */,
-				77840FCB205C12250099740B /* UIControl+BlockKit.m */,
-				772150DE205CFB440071F7E1 /* UIGestureRecognizer+BlockKit.h */,
-				772150DF205CFB440071F7E1 /* UIGestureRecognizer+BlockKit.m */,
-				77215103205D1E710071F7E1 /* NSObject+ZRunAtDealloc.h */,
-				77215104205D1E710071F7E1 /* NSObject+ZRunAtDealloc.m */,
+				77840FCA205C12250099740B /* UIControl+BlocksKit.h */,
+				77840FCB205C12250099740B /* UIControl+BlocksKit.m */,
+				772150DE205CFB440071F7E1 /* UIGestureRecognizer+BlocksKit.h */,
+				772150DF205CFB440071F7E1 /* UIGestureRecognizer+BlocksKit.m */,
+				77215103205D1E710071F7E1 /* NSObject+BlocksKit.h */,
+				77215104205D1E710071F7E1 /* NSObject+BlocksKit.m */,
 			);
 			path = BlockKit;
 			sourceTree = "<group>";
@@ -178,10 +178,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77840FCC205C12250099740B /* UIControl+BlockKit.m in Sources */,
+				77840FCC205C12250099740B /* UIControl+BlocksKit.m in Sources */,
 				77840FB7205C11770099740B /* ViewController.m in Sources */,
-				77215105205D1E710071F7E1 /* NSObject+ZRunAtDealloc.m in Sources */,
-				772150E0205CFB440071F7E1 /* UIGestureRecognizer+BlockKit.m in Sources */,
+				77215105205D1E710071F7E1 /* NSObject+BlocksKit.m in Sources */,
+				772150E0205CFB440071F7E1 /* UIGestureRecognizer+BlocksKit.m in Sources */,
 				77840FC2205C11770099740B /* main.m in Sources */,
 				77840FB4205C11770099740B /* AppDelegate.m in Sources */,
 				77840FCF205C12560099740B /* ZUIKit.m in Sources */,

@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "ZUIKit.h"
-#import "NSObject+ZRunAtDealloc.h"
+#import "NSObject+BlocksKit.h"
 
 @interface ViewController ()
 
@@ -37,6 +37,11 @@
     [object bk_runAtDealloc:^{
         NSLog(@"哎呀！对象被释放掉了！");
     }];
+    
+    
+    UITextField *textfield = [ZUIKit textfieldWithPlaceholder:@"这个只是测试" fontSize:16 textColor:[UIColor redColor] textAlignment:NSTextAlignmentLeft placeholderAttributes:@{@"只是":@{NSForegroundColorAttributeName:[UIColor redColor],NSFontAttributeName:[UIFont systemFontOfSize:20]}}];
+    textfield.frame = CGRectMake(0, 300, 200, 40);
+    [self.view addSubview:textfield];
 }
 
 

@@ -6,7 +6,7 @@
 //  Copyright © 2018年 张国忠. All rights reserved.
 //
 
-#import "UIControl+BlockKit.h"
+#import "UIControl+BlocksKit.h"
 #import <objc/runtime.h>
 
 static const void *BKControlHandlersKey = &BKControlHandlersKey;
@@ -41,7 +41,7 @@ static const void *BKControlHandlersKey = &BKControlHandlersKey;
 
 @end
 
-@implementation UIControl (BlockKit)
+@implementation UIControl (BlocksKit)
 
 - (void)bk_addEventHandler:(void (^)(id))handler forControlEvents:(UIControlEvents)controlEvents{
     NSParameterAssert(handler);

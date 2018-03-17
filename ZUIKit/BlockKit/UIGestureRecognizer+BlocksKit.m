@@ -6,7 +6,7 @@
 //  Copyright © 2018年 张国忠. All rights reserved.
 //
 
-#import "UIGestureRecognizer+BlockKit.h"
+#import "UIGestureRecognizer+BlocksKit.h"
 #import <objc/runtime.h>
 
 static const void * BKGestureHandlerKey = &BKGestureHandlerKey;
@@ -41,7 +41,7 @@ static const void * BKGestureHandlerKey = &BKGestureHandlerKey;
 
 @end
 
-@implementation UIGestureRecognizer (BlockKit)
+@implementation UIGestureRecognizer (BlocksKit)
 
 + (instancetype)bk_recognizerWithHandler:(void (^)(UIGestureRecognizer *, UIGestureRecognizerState))handler {
     return [[[self class] alloc] bk_initWithHandler:handler];

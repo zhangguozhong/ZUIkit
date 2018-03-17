@@ -7,8 +7,8 @@
 //
 
 #import "ZUIKit.h"
-#import "UIControl+BlockKit.h"
-#import "UIGestureRecognizer+BlockKit.h"
+#import "UIControl+BlocksKit.h"
+#import "UIGestureRecognizer+BlocksKit.h"
 
 @implementation ZUIKit
 
@@ -67,19 +67,27 @@
 
 #pragma mark create button method
 + (UIButton *)buttonWithTitle:(NSString *)title {
-    return [self buttonWithTitle:title titleColor:[UIColor blackColor]];
+    return [self buttonWithTitle:title fontSize:17];
 }
 
-+ (UIButton *)buttonWithTitle:(NSString *)title titleColor:(UIColor *)titleColor {
-    return [self buttonWithTitle:title titleColor:titleColor handler:nil];
++ (UIButton *)buttonWithTitle:(NSString *)title fontSize:(CGFloat)fontSize {
+    return [self buttonWithTitle:title fontSize:fontSize titleColor:[UIColor blackColor]];
+}
+
++ (UIButton *)buttonWithTitle:(NSString *)title fontSize:(CGFloat)fontSize titleColor:(UIColor *)titleColor {
+    return [self buttonWithTitle:title fontSize:fontSize titleColor:titleColor handler:nil];
 }
 
 + (UIButton *)buttonWithTitle:(NSString *)title handler:(void (^)(id))handler {
-    return [self buttonWithTitle:title titleColor:[UIColor blackColor] handler:handler];
+    return [self buttonWithTitle:title fontSize:17 handler:handler];
 }
 
-+ (UIButton *)buttonWithTitle:(NSString *)title titleColor:(UIColor *)titleColor handler:(void (^)(id))handler {
-    return [self buttonWithImage:nil title:title titleColor:titleColor handler:handler];
++ (UIButton *)buttonWithTitle:(NSString *)title fontSize:(CGFloat)fontSize handler:(void (^)(id))handler {
+    return [self buttonWithTitle:title fontSize:fontSize titleColor:[UIColor blackColor] handler:handler];
+}
+
++ (UIButton *)buttonWithTitle:(NSString *)title fontSize:(CGFloat)fontSize titleColor:(UIColor *)titleColor handler:(void (^)(id))handler {
+    return [self buttonWithImage:nil title:title fontSize:fontSize titleColor:titleColor handler:handler];
 }
 
 + (UIButton *)buttonWithImage:(UIImage *)image {
@@ -87,16 +95,21 @@
 }
 
 + (UIButton *)buttonWithImage:(UIImage *)image title:(NSString *)title {
-    return [self buttonWithImage:image title:title titleColor:[UIColor blackColor]];
+    return [self buttonWithImage:image title:title fontSize:17];
 }
 
-+ (UIButton *)buttonWithImage:(UIImage *)image title:(NSString *)title titleColor:(UIColor *)titleColor {
-    return [self buttonWithImage:image title:title titleColor:titleColor handler:nil];
++ (UIButton *)buttonWithImage:(UIImage *)image title:(NSString *)title fontSize:(CGFloat)fontSize {
+    return [self buttonWithImage:image title:title fontSize:fontSize titleColor:[UIColor blackColor]];
 }
 
-+ (UIButton *)buttonWithImage:(UIImage *)image title:(NSString *)title titleColor:(UIColor *)titleColor handler:(void (^)(id))handler {
++ (UIButton *)buttonWithImage:(UIImage *)image title:(NSString *)title fontSize:(CGFloat)fontSize titleColor:(UIColor *)titleColor {
+    return [self buttonWithImage:image title:title fontSize:fontSize titleColor:titleColor handler:nil];
+}
+
++ (UIButton *)buttonWithImage:(UIImage *)image title:(NSString *)title fontSize:(CGFloat)fontSize titleColor:(UIColor *)titleColor handler:(void (^)(id))handler {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setTitle:title forState:UIControlStateNormal];
+    button.titleLabel.font = [UIFont systemFontOfSize:fontSize];
     [button setTitleColor:titleColor forState:UIControlStateNormal];
     if (image) {
         [button setImage:image forState:UIControlStateNormal];
@@ -110,38 +123,41 @@
 
 
 #pragma mark - create textfield method
-+ (UITextField *)textfield {
-    return [self textfieldWithPlaceholder:nil];
-}
-
 + (UITextField *)textfieldWithPlaceholder:(NSString *)placeholder {
-    return [self textfieldWithPlaceholder:placeholder textColor:[UIColor blackColor]];
+    return [self textfieldWithPlaceholder:placeholder fontSize:14];
 }
 
-+ (UITextField *)textfieldWithPlaceholder:(NSString *)placeholder textColor:(UIColor *)textColor {
-    return [self textfieldWithPlaceholder:placeholder textColor:textColor textAlignment:NSTextAlignmentLeft];
++ (UITextField *)textfieldWithPlaceholder:(NSString *)placeholder fontSize:(CGFloat)fontSize {
+    return [self textfieldWithPlaceholder:placeholder fontSize:fontSize textColor:[UIColor blackColor]];
 }
 
-+ (UITextField *)textfieldWithPlaceholder:(NSString *)placeholder textColor:(UIColor *)textColor textAlignment:(NSTextAlignment)textAlignment {
-    return [self textfieldWithPlaceholder:placeholder textColor:textColor textAlignment:textAlignment textAttributes:nil];
++ (UITextField *)textfieldWithPlaceholder:(NSString *)placeholder fontSize:(CGFloat)fontSize textColor:(UIColor *)textColor {
+    return [self textfieldWithPlaceholder:placeholder fontSize:fontSize textColor:textColor textAlignment:NSTextAlignmentLeft];
 }
 
-+ (UITextField *)textfieldWithPlaceholder:(NSString *)placeholder textColor:(UIColor *)textColor textAlignment:(NSTextAlignment)textAlignment textAttributes:(NSDictionary *)textAttributes {
-    return [self textfieldWithPlaceholder:placeholder textColor:textColor textAlignment:textAlignment textAttributes:textAttributes delegateTarget:nil];
++ (UITextField *)textfieldWithPlaceholder:(NSString *)placeholder fontSize:(CGFloat)fontSize textColor:(UIColor *)textColor textAlignment:(NSTextAlignment)textAlignment {
+    return [self textfieldWithPlaceholder:placeholder fontSize:fontSize textColor:textColor textAlignment:textAlignment placeholderAttributes:nil];
 }
 
-+ (UITextField *)textfieldWithPlaceholder:(NSString *)placeholder textColor:(UIColor *)textColor textAlignment:(NSTextAlignment)textAlignment textAttributes:(NSDictionary<NSAttributedStringKey, id> *)textAttributes delegateTarget:(id<UITextFieldDelegate>)delegateTarget {
++ (UITextField *)textfieldWithPlaceholder:(NSString *)placeholder fontSize:(CGFloat)fontSize textColor:(UIColor *)textColor textAlignment:(NSTextAlignment)textAlignment placeholderAttributes:(NSDictionary<id, NSDictionary<NSAttributedStringKey, id> *> *)placeholderAttributes {
+    return [self textfieldWithPlaceholder:placeholder fontSize:fontSize textColor:textColor textAlignment:textAlignment placeholderAttributes:placeholderAttributes delegateTarget:nil];
+}
+
++ (UITextField *)textfieldWithPlaceholder:(NSString *)placeholder fontSize:(CGFloat)fontSize textColor:(UIColor *)textColor textAlignment:(NSTextAlignment)textAlignment placeholderAttributes:(NSDictionary<id, NSDictionary<NSAttributedStringKey, id> *> *)placeholderAttributes delegateTarget:(id<UITextFieldDelegate>)delegateTarget {
     UITextField *textfield = [[UITextField alloc] init];
     textfield.placeholder = placeholder;
+    textfield.font = [UIFont systemFontOfSize:fontSize];
     textfield.textColor = textColor;
     textfield.textAlignment = textAlignment;
     
-    if (textAttributes) {
-        NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:textfield.text];
-        [textAttributes enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull string, id  _Nonnull objAttrs, BOOL * _Nonnull stop) {
-            [attributedText addAttribute:string value:objAttrs range:[string rangeOfString:textfield.text]];
+    if (placeholderAttributes) {
+        NSMutableAttributedString *attributedPlaceholder = [[NSMutableAttributedString alloc] initWithString:textfield.placeholder];
+        [placeholderAttributes enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull keyWords, NSDictionary<NSAttributedStringKey,id> * _Nonnull allAttrs, BOOL * _Nonnull stop) {
+            if (allAttrs) {
+                [attributedPlaceholder addAttributes:allAttrs range:[textfield.placeholder rangeOfString:keyWords]];
+            }
         }];
-        textfield.attributedText = attributedText;
+        textfield.attributedPlaceholder = attributedPlaceholder;
     }
     
     if (delegateTarget && [delegateTarget conformsToProtocol:@protocol(UITextFieldDelegate)]) {

@@ -8,11 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIGestureRecognizer (BlockKit)
+@interface UIGestureRecognizer (BlocksKit)
 
+
+/**
+ 绑定手势事件
+
+ @param handler 识别手势后执行的handler
+ @return 手势对象
+ */
 + (instancetype)bk_recognizerWithHandler:(void(^)(UIGestureRecognizer *sender, UIGestureRecognizerState state))handler;
 - (instancetype)bk_initWithHandler:(void (^)(UIGestureRecognizer *sender, UIGestureRecognizerState state))block;
 
+
+/**
+ 是否执行手势事件
+ */
 @property (nonatomic, assign, setter=bk_setShouldHandleAction:) BOOL bk_shouldHandleAction;
 
 @end

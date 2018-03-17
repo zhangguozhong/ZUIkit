@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSObject (ZRunAtDealloc)
+@interface NSObject (BlocksKit)
 
 
 /**

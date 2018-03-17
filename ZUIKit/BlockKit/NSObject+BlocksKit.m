@@ -6,7 +6,7 @@
 //  Copyright © 2018年 张国忠. All rights reserved.
 //
 
-#import "NSObject+ZRunAtDealloc.h"
+#import "NSObject+BlocksKit.h"
 #import <objc/runtime.h>
 
 static const void * BKRunAtDeallocExcutorKey = &BKRunAtDeallocExcutorKey;
@@ -39,7 +39,7 @@ static const void * BKRunAtDeallocExcutorKey = &BKRunAtDeallocExcutorKey;
 
 @end
 
-@implementation NSObject (ZRunAtDealloc)
+@implementation NSObject (BlocksKit)
 
 
 /**
