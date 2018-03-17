@@ -10,6 +10,10 @@
 #import "UIControl+BlocksKit.h"
 #import "UIGestureRecognizer+BlocksKit.h"
 
+static const CGFloat ZUIKitLabelDefaultFontSize = 14.f;
+static const CGFloat ZUIKitTextFieldDefaultFontSize = 14.f;
+static const CGFloat ZUIKitButtonDefaultFontSize = 17.f;
+
 @implementation ZUIKit
 
 #pragma mark - create view method
@@ -44,7 +48,7 @@
 
 #pragma mark create label method
 + (UILabel *)labelWithText:(NSString *)text {
-    return [self labelWithText:text fontSize:14];
+    return [self labelWithText:text fontSize:ZUIKitLabelDefaultFontSize];
 }
 
 + (UILabel *)labelWithText:(NSString *)text fontSize:(CGFloat)fontSize {
@@ -67,7 +71,7 @@
 
 #pragma mark create button method
 + (UIButton *)buttonWithTitle:(NSString *)title {
-    return [self buttonWithTitle:title fontSize:17];
+    return [self buttonWithTitle:title fontSize:ZUIKitButtonDefaultFontSize];
 }
 
 + (UIButton *)buttonWithTitle:(NSString *)title fontSize:(CGFloat)fontSize {
@@ -79,7 +83,7 @@
 }
 
 + (UIButton *)buttonWithTitle:(NSString *)title handler:(void (^)(id))handler {
-    return [self buttonWithTitle:title fontSize:17 handler:handler];
+    return [self buttonWithTitle:title fontSize:ZUIKitButtonDefaultFontSize handler:handler];
 }
 
 + (UIButton *)buttonWithTitle:(NSString *)title fontSize:(CGFloat)fontSize handler:(void (^)(id))handler {
@@ -95,7 +99,7 @@
 }
 
 + (UIButton *)buttonWithImage:(UIImage *)image title:(NSString *)title {
-    return [self buttonWithImage:image title:title fontSize:17];
+    return [self buttonWithImage:image title:title fontSize:ZUIKitButtonDefaultFontSize];
 }
 
 + (UIButton *)buttonWithImage:(UIImage *)image title:(NSString *)title fontSize:(CGFloat)fontSize {
@@ -124,7 +128,7 @@
 
 #pragma mark - create textfield method
 + (UITextField *)textfieldWithPlaceholder:(NSString *)placeholder {
-    return [self textfieldWithPlaceholder:placeholder fontSize:14];
+    return [self textfieldWithPlaceholder:placeholder fontSize:ZUIKitTextFieldDefaultFontSize];
 }
 
 + (UITextField *)textfieldWithPlaceholder:(NSString *)placeholder fontSize:(CGFloat)fontSize {
