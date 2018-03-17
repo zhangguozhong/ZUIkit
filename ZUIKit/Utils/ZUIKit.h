@@ -37,4 +37,13 @@
 + (UIButton *)buttonWithImage:(UIImage *)image title:(NSString *)title titleColor:(UIColor *)titleColor;
 + (UIButton *)buttonWithImage:(UIImage *)image title:(NSString *)title titleColor:(UIColor *)titleColor handler:(void(^)(id sender))handler;
 
+
+#pragma mark - create textfield method
++ (UITextField *)textfield;
++ (UITextField *)textfieldWithPlaceholder:(NSString *)placeholder;
++ (UITextField *)textfieldWithPlaceholder:(NSString *)placeholder textColor:(UIColor *)textColor;
++ (UITextField *)textfieldWithPlaceholder:(NSString *)placeholder textColor:(UIColor *)textColor textAlignment:(NSTextAlignment)textAlignment;
++ (UITextField *)textfieldWithPlaceholder:(NSString *)placeholder textColor:(UIColor *)textColor textAlignment:(NSTextAlignment)textAlignment textAttributes:(NSDictionary *)textAttributes;
++ (UITextField *)textfieldWithPlaceholder:(NSString *)placeholder textColor:(UIColor *)textColor textAlignment:(NSTextAlignment)textAlignment textAttributes:(NSDictionary *)textAttributes delegateTarget:(id<UITextFieldDelegate>)delegateTarget;
+
 @end

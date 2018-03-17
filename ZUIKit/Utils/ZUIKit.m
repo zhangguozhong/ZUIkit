@@ -107,4 +107,48 @@
     return button;
 }
 
+
+
+#pragma mark - create textfield method
++ (UITextField *)textfield {
+    return [self textfieldWithPlaceholder:nil];
+}
+
++ (UITextField *)textfieldWithPlaceholder:(NSString *)placeholder {
+    return [self textfieldWithPlaceholder:placeholder textColor:[UIColor blackColor]];
+}
+
++ (UITextField *)textfieldWithPlaceholder:(NSString *)placeholder textColor:(UIColor *)textColor {
+    return [self textfieldWithPlaceholder:placeholder textColor:textColor textAlignment:NSTextAlignmentLeft];
+}
+
++ (UITextField *)textfieldWithPlaceholder:(NSString *)placeholder textColor:(UIColor *)textColor textAlignment:(NSTextAlignment)textAlignment {
+    return [self textfieldWithPlaceholder:placeholder textColor:textColor textAlignment:textAlignment textAttributes:nil];
+}
+
++ (UITextField *)textfieldWithPlaceholder:(NSString *)placeholder textColor:(UIColor *)textColor textAlignment:(NSTextAlignment)textAlignment textAttributes:(NSDictionary *)textAttributes {
+    return [self textfieldWithPlaceholder:placeholder textColor:textColor textAlignment:textAlignment textAttributes:textAttributes delegateTarget:nil];
+}
+
++ (UITextField *)textfieldWithPlaceholder:(NSString *)placeholder textColor:(UIColor *)textColor textAlignment:(NSTextAlignment)textAlignment textAttributes:(NSDictionary<NSAttributedStringKey, id> *)textAttributes delegateTarget:(id<UITextFieldDelegate>)delegateTarget {
+    UITextField *textfield = [[UITextField alloc] init];
+    textfield.placeholder = placeholder;
+    textfield.textColor = textColor;
+    textfield.textAlignment = textAlignment;
+    
+    if (textAttributes) {
+        NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:textfield.text];
+        [textAttributes enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull string, id  _Nonnull objAttrs, BOOL * _Nonnull stop) {
+            [attributedText addAttribute:string value:objAttrs range:[string rangeOfString:textfield.text]];
+        }];
+        textfield.attributedText = attributedText;
+    }
+    
+    if (delegateTarget && [delegateTarget conformsToProtocol:@protocol(UITextFieldDelegate)]) {
+        textfield.delegate = delegateTarget;
+    }
+    
+    return textfield;
+}
+
 @end
