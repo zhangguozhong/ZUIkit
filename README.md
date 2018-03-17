@@ -5,3 +5,6 @@
 ### 使用
 
 pod 'ZUIKit'
+
+### 说明
+目前只有UIView、UIButton、UILabel以及UITextField控件的初始化方法；
