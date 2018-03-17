@@ -70,7 +70,7 @@
 		77840FB1205C11770099740B /* ZUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				77840FC9205C12000099740B /* BlockKit */,
+				77840FC9205C12000099740B /* BlocksKit */,
 				77840FC8205C11EB0099740B /* Utils */,
 				77840FB2205C11770099740B /* AppDelegate.h */,
 				77840FB3205C11770099740B /* AppDelegate.m */,
@@ -94,7 +94,7 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		77840FC9205C12000099740B /* BlockKit */ = {
+		77840FC9205C12000099740B /* BlocksKit */ = {
 			isa = PBXGroup;
 			children = (
 				77840FCA205C12250099740B /* UIControl+BlocksKit.h */,
@@ -104,7 +104,7 @@
 				77215103205D1E710071F7E1 /* NSObject+BlocksKit.h */,
 				77215104205D1E710071F7E1 /* NSObject+BlocksKit.m */,
 			);
-			path = BlockKit;
+			path = BlocksKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
