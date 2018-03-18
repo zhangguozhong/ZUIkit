@@ -33,6 +33,15 @@ static const CGFloat ZUIKitButtonTitleDefaultFontSize = 17.f;
     return [self createViewWithFrame:frame backgroundColor:backgroundColor handler:nil];
 }
 
+
+/**
+ 创建UIView对象
+
+ @param frame view的布局大小
+ @param backgroundColor 背景色
+ @param handler tap手势执行的事件
+ @return view对象
+ */
 + (UIView *)createViewWithFrame:(CGRect)frame backgroundColor:(UIColor *)backgroundColor handler:(void (^)(UIGestureRecognizer *, UIGestureRecognizerState))handler {
     UIView *view = [[UIView alloc] init];
     view.frame = frame;
@@ -59,6 +68,16 @@ static const CGFloat ZUIKitButtonTitleDefaultFontSize = 17.f;
     return [self labelWithText:text fontSize:fontSize textColor:textColor textAlignment:NSTextAlignmentLeft];
 }
 
+
+/**
+ 创建UILabel对象
+
+ @param text 显示的文字
+ @param fontSize 字号大小
+ @param textColor 字体颜色
+ @param TextAlignment 文字排列方式
+ @return label对象
+ */
 + (UILabel *)labelWithText:(NSString *)text fontSize:(CGFloat)fontSize textColor:(UIColor *)textColor textAlignment:(NSTextAlignment)TextAlignment {
     UILabel *label = [[UILabel alloc] init];
     label.text = text;
@@ -70,6 +89,14 @@ static const CGFloat ZUIKitButtonTitleDefaultFontSize = 17.f;
 
 
 #pragma mark create button method
+
+/**
+ 创建button对象
+
+ @param image 按钮图片
+ @param handler 点击按钮要执行的事件
+ @return button对象
+ */
 + (UIButton *)buttonWithImage:(UIImage *)image handler:(void (^)(id))handler {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     if (image) {
@@ -93,6 +120,16 @@ static const CGFloat ZUIKitButtonTitleDefaultFontSize = 17.f;
     return [self buttonWithTitle:title fontSize:ZUIKitButtonTitleDefaultFontSize titleColor:titleColor handler:handler];
 }
 
+
+/**
+ 创建button对象
+
+ @param title 按钮标题
+ @param fontSize 文字字号大小
+ @param titleColor 字体颜色
+ @param handler 点击按钮要执行的事件
+ @return button对象
+ */
 + (UIButton *)buttonWithTitle:(NSString *)title fontSize:(CGFloat)fontSize titleColor:(UIColor *)titleColor handler:(void (^)(id))handler {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setTitle:title forState:UIControlStateNormal];
@@ -123,6 +160,17 @@ static const CGFloat ZUIKitButtonTitleDefaultFontSize = 17.f;
     return [self textfieldWithPlaceholder:placeholder fontSize:fontSize textColor:textColor textAlignment:textAlignment placeholderAttributes:nil];
 }
 
+
+/**
+ 创建UITextField对象
+
+ @param placeholder placeholder描述
+ @param fontSize 字号大小
+ @param textColor 字体颜色
+ @param textAlignment 文字排列方式
+ @param placeholderAttributes placeholder样式
+ @return textfield对象
+ */
 + (UITextField *)textfieldWithPlaceholder:(NSString *)placeholder fontSize:(CGFloat)fontSize textColor:(UIColor *)textColor textAlignment:(NSTextAlignment)textAlignment placeholderAttributes:(NSDictionary<id, NSDictionary<NSAttributedStringKey, id> *> *)placeholderAttributes {
     UITextField *textfield = [[UITextField alloc] init];
     textfield.placeholder = placeholder;
