@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIControl (BlocksKit)
+@interface UIButton (BlocksKit)
 
 
 /**

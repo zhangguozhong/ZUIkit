@@ -6,7 +6,7 @@
 //  Copyright © 2018年 张国忠. All rights reserved.
 //
 
-#import "UIControl+BlocksKit.h"
+#import "UIButton+BlocksKit.h"
 #import <objc/runtime.h>
 
 static const void *BKControlHandlersKey = &BKControlHandlersKey;
@@ -35,13 +35,15 @@ static const void *BKControlHandlersKey = &BKControlHandlersKey;
     return [[BKControlWrapper alloc] initWithHandler:self.handler forControlEvents:self.controlEvents];
 }
 
-- (void)doHandler:(id)sender{
-    self.handler(sender);
+- (void)doHandler:(UIButton *)sender{
+    if (sender.isEnabled) {
+        self.handler(sender);
+    }
 }
 
 @end
 
-@implementation UIControl (BlocksKit)
+@implementation UIButton (BlocksKit)
 
 - (void)bk_addEventHandler:(void (^)(id))handler forControlEvents:(UIControlEvents)controlEvents{
     NSParameterAssert(handler);

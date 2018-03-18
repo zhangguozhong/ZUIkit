@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    UIButton *button = [ZUIKit buttonWithTitle:@"test" handler:^(id sender) {
+    UIButton *button = [ZUIKit buttonWithTitle:@"test" handler:^(UIButton *sender) {
         NSLog(@"测试点击事件");
     }];
     button.frame = CGRectMake(0, 100, 200, 40);

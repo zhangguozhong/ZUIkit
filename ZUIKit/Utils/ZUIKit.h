@@ -45,11 +45,11 @@
 
  @return button对象
  */
-+ (UIButton *)buttonWithImage:(UIImage *)image handler:(void(^)(id sender))handler;
-+ (UIButton *)buttonWithTitle:(NSString *)title handler:(void(^)(id sender))handler;
-+ (UIButton *)buttonWithTitle:(NSString *)title titleColor:(UIColor *)titleColor handler:(void(^)(id sender))handler;
-+ (UIButton *)buttonWithTitle:(NSString *)title fontSize:(CGFloat)fontSize handler:(void(^)(id sender))handler;
-+ (UIButton *)buttonWithTitle:(NSString *)title fontSize:(CGFloat)fontSize titleColor:(UIColor *)titleColor handler:(void(^)(id sender))handler;
++ (UIButton *)buttonWithImage:(UIImage *)image handler:(void(^)(UIButton *sender))handler;
++ (UIButton *)buttonWithTitle:(NSString *)title handler:(void(^)(UIButton *sender))handler;
++ (UIButton *)buttonWithTitle:(NSString *)title titleColor:(UIColor *)titleColor handler:(void(^)(UIButton *sender))handler;
++ (UIButton *)buttonWithTitle:(NSString *)title fontSize:(CGFloat)fontSize handler:(void(^)(UIButton *sender))handler;
++ (UIButton *)buttonWithTitle:(NSString *)title fontSize:(CGFloat)fontSize titleColor:(UIColor *)titleColor handler:(void(^)(UIButton *sender))handler;
 
 
 #pragma mark - create textfield method

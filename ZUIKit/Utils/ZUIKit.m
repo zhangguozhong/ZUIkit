@@ -7,7 +7,7 @@
 //
 
 #import "ZUIKit.h"
-#import "UIControl+BlocksKit.h"
+#import "UIButton+BlocksKit.h"
 #import "UIGestureRecognizer+BlocksKit.h"
 
 static const CGFloat ZUIKitLabelTextDefaultFontSize = 14.f;
@@ -97,7 +97,7 @@ static const CGFloat ZUIKitButtonTitleDefaultFontSize = 17.f;
  @param handler 点击按钮要执行的事件
  @return button对象
  */
-+ (UIButton *)buttonWithImage:(UIImage *)image handler:(void (^)(id))handler {
++ (UIButton *)buttonWithImage:(UIImage *)image handler:(void (^)(UIButton *))handler {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     if (image) {
         [button setImage:image forState:UIControlStateNormal];
@@ -108,15 +108,15 @@ static const CGFloat ZUIKitButtonTitleDefaultFontSize = 17.f;
     return button;
 }
 
-+ (UIButton *)buttonWithTitle:(NSString *)title handler:(void (^)(id))handler {
++ (UIButton *)buttonWithTitle:(NSString *)title handler:(void (^)(UIButton *))handler {
     return [self buttonWithTitle:title fontSize:ZUIKitButtonTitleDefaultFontSize handler:handler];
 }
 
-+ (UIButton *)buttonWithTitle:(NSString *)title fontSize:(CGFloat)fontSize handler:(void (^)(id))handler {
++ (UIButton *)buttonWithTitle:(NSString *)title fontSize:(CGFloat)fontSize handler:(void (^)(UIButton *))handler {
     return [self buttonWithTitle:title fontSize:fontSize titleColor:[UIColor blackColor] handler:handler];
 }
 
-+ (UIButton *)buttonWithTitle:(NSString *)title titleColor:(UIColor *)titleColor handler:(void (^)(id))handler {
++ (UIButton *)buttonWithTitle:(NSString *)title titleColor:(UIColor *)titleColor handler:(void (^)(UIButton *))handler {
     return [self buttonWithTitle:title fontSize:ZUIKitButtonTitleDefaultFontSize titleColor:titleColor handler:handler];
 }
 
@@ -130,7 +130,7 @@ static const CGFloat ZUIKitButtonTitleDefaultFontSize = 17.f;
  @param handler 点击按钮要执行的事件
  @return button对象
  */
-+ (UIButton *)buttonWithTitle:(NSString *)title fontSize:(CGFloat)fontSize titleColor:(UIColor *)titleColor handler:(void (^)(id))handler {
++ (UIButton *)buttonWithTitle:(NSString *)title fontSize:(CGFloat)fontSize titleColor:(UIColor *)titleColor handler:(void (^)(UIButton *))handler {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setTitle:title forState:UIControlStateNormal];
     button.titleLabel.font = [UIFont systemFontOfSize:fontSize];

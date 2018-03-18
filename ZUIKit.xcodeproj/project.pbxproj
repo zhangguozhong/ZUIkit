@@ -15,7 +15,7 @@
 		77840FBC205C11770099740B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77840FBB205C11770099740B /* Assets.xcassets */; };
 		77840FBF205C11770099740B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77840FBD205C11770099740B /* LaunchScreen.storyboard */; };
 		77840FC2205C11770099740B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 77840FC1205C11770099740B /* main.m */; };
-		77840FCC205C12250099740B /* UIControl+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 77840FCB205C12250099740B /* UIControl+BlocksKit.m */; };
+		77840FCC205C12250099740B /* UIButton+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 77840FCB205C12250099740B /* UIButton+BlocksKit.m */; };
 		77840FCF205C12560099740B /* ZUIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 77840FCE205C12560099740B /* ZUIKit.m */; };
 /* End PBXBuildFile section */
 
@@ -34,8 +34,8 @@
 		77840FBE205C11770099740B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77840FC0205C11770099740B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77840FC1205C11770099740B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		77840FCA205C12250099740B /* UIControl+BlocksKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+BlocksKit.h"; sourceTree = "<group>"; };
-		77840FCB205C12250099740B /* UIControl+BlocksKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+BlocksKit.m"; sourceTree = "<group>"; };
+		77840FCA205C12250099740B /* UIButton+BlocksKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+BlocksKit.h"; sourceTree = "<group>"; };
+		77840FCB205C12250099740B /* UIButton+BlocksKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+BlocksKit.m"; sourceTree = "<group>"; };
 		77840FCD205C12560099740B /* ZUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZUIKit.h; sourceTree = "<group>"; };
 		77840FCE205C12560099740B /* ZUIKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZUIKit.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,8 +97,8 @@
 		77840FC9205C12000099740B /* BlocksKit */ = {
 			isa = PBXGroup;
 			children = (
-				77840FCA205C12250099740B /* UIControl+BlocksKit.h */,
-				77840FCB205C12250099740B /* UIControl+BlocksKit.m */,
+				77840FCA205C12250099740B /* UIButton+BlocksKit.h */,
+				77840FCB205C12250099740B /* UIButton+BlocksKit.m */,
 				772150DE205CFB440071F7E1 /* UIGestureRecognizer+BlocksKit.h */,
 				772150DF205CFB440071F7E1 /* UIGestureRecognizer+BlocksKit.m */,
 				77215103205D1E710071F7E1 /* NSObject+BlocksKit.h */,
@@ -178,7 +178,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77840FCC205C12250099740B /* UIControl+BlocksKit.m in Sources */,
+				77840FCC205C12250099740B /* UIButton+BlocksKit.m in Sources */,
 				77840FB7205C11770099740B /* ViewController.m in Sources */,
 				77215105205D1E710071F7E1 /* NSObject+BlocksKit.m in Sources */,
 				772150E0205CFB440071F7E1 /* UIGestureRecognizer+BlocksKit.m in Sources */,
