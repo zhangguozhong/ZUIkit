@@ -12,6 +12,12 @@
 @interface ZUIKit : NSObject
 
 #pragma mark - create view method
+
+/**
+ 初始化UIView的方法
+
+ @return view对象
+ */
 + (UIView *)createView;
 + (UIView *)createViewWithFrame:(CGRect)frame;
 + (UIView *)createViewWithHandler:(void(^)(UIGestureRecognizer *gesture, UIGestureRecognizerState state))handler;
@@ -20,6 +26,12 @@
 
 
 #pragma mark - create label method
+
+/**
+ 初始化UILabel的方法
+ 
+ @return label对象
+ */
 + (UILabel *)labelWithText:(NSString *)text;
 + (UILabel *)labelWithText:(NSString *)text fontSize:(CGFloat)fontSize;
 + (UILabel *)labelWithText:(NSString *)text fontSize:(CGFloat)fontSize textColor:(UIColor *)textColor;
@@ -27,26 +39,30 @@
 
 
 #pragma mark - create button method
-+ (UIButton *)buttonWithTitle:(NSString *)title;
+
+/**
+ 初始化UIButton的方法
+
+ @return button对象
+ */
++ (UIButton *)buttonWithImage:(UIImage *)image handler:(void(^)(id sender))handler;
 + (UIButton *)buttonWithTitle:(NSString *)title handler:(void(^)(id sender))handler;
-+ (UIButton *)buttonWithTitle:(NSString *)title fontSize:(CGFloat)fontSize;
-+ (UIButton *)buttonWithTitle:(NSString *)title fontSize:(CGFloat)fontSize titleColor:(UIColor *)titleColor;
++ (UIButton *)buttonWithTitle:(NSString *)title titleColor:(UIColor *)titleColor handler:(void(^)(id sender))handler;
 + (UIButton *)buttonWithTitle:(NSString *)title fontSize:(CGFloat)fontSize handler:(void(^)(id sender))handler;
 + (UIButton *)buttonWithTitle:(NSString *)title fontSize:(CGFloat)fontSize titleColor:(UIColor *)titleColor handler:(void(^)(id sender))handler;
 
-+ (UIButton *)buttonWithImage:(UIImage *)image;
-+ (UIButton *)buttonWithImage:(UIImage *)image title:(NSString *)title;
-+ (UIButton *)buttonWithImage:(UIImage *)image title:(NSString *)title fontSize:(CGFloat)fontSize;
-+ (UIButton *)buttonWithImage:(UIImage *)image title:(NSString *)title fontSize:(CGFloat)fontSize titleColor:(UIColor *)titleColor;
-+ (UIButton *)buttonWithImage:(UIImage *)image title:(NSString *)title fontSize:(CGFloat)fontSize titleColor:(UIColor *)titleColor handler:(void(^)(id sender))handler;
-
 
 #pragma mark - create textfield method
+
+/**
+ 初始化UITextField的方法
+
+ @return textfield
+ */
 + (UITextField *)textfieldWithPlaceholder:(NSString *)placeholder;
 + (UITextField *)textfieldWithPlaceholder:(NSString *)placeholder fontSize:(CGFloat)fontSize;
 + (UITextField *)textfieldWithPlaceholder:(NSString *)placeholder fontSize:(CGFloat)fontSize textColor:(UIColor *)textColor;
 + (UITextField *)textfieldWithPlaceholder:(NSString *)placeholder fontSize:(CGFloat)fontSize textColor:(UIColor *)textColor textAlignment:(NSTextAlignment)textAlignment;
 + (UITextField *)textfieldWithPlaceholder:(NSString *)placeholder fontSize:(CGFloat)fontSize textColor:(UIColor *)textColor textAlignment:(NSTextAlignment)textAlignment placeholderAttributes:(NSDictionary<id, NSDictionary<NSAttributedStringKey, id> *> *)placeholderAttributes;
-+ (UITextField *)textfieldWithPlaceholder:(NSString *)placeholder fontSize:(CGFloat)fontSize textColor:(UIColor *)textColor textAlignment:(NSTextAlignment)textAlignment placeholderAttributes:(NSDictionary<id, NSDictionary<NSAttributedStringKey, id> *> *)placeholderAttributes delegateTarget:(id<UITextFieldDelegate>)delegateTarget;
 
 @end

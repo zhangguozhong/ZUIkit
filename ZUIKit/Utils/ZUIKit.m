@@ -10,9 +10,9 @@
 #import "UIControl+BlocksKit.h"
 #import "UIGestureRecognizer+BlocksKit.h"
 
-static const CGFloat ZUIKitLabelDefaultFontSize = 14.f;
+static const CGFloat ZUIKitLabelTextDefaultFontSize = 14.f;
 static const CGFloat ZUIKitTextFieldDefaultFontSize = 14.f;
-static const CGFloat ZUIKitButtonDefaultFontSize = 17.f;
+static const CGFloat ZUIKitButtonTitleDefaultFontSize = 17.f;
 
 @implementation ZUIKit
 
@@ -48,7 +48,7 @@ static const CGFloat ZUIKitButtonDefaultFontSize = 17.f;
 
 #pragma mark create label method
 + (UILabel *)labelWithText:(NSString *)text {
-    return [self labelWithText:text fontSize:ZUIKitLabelDefaultFontSize];
+    return [self labelWithText:text fontSize:ZUIKitLabelTextDefaultFontSize];
 }
 
 + (UILabel *)labelWithText:(NSString *)text fontSize:(CGFloat)fontSize {
@@ -70,51 +70,8 @@ static const CGFloat ZUIKitButtonDefaultFontSize = 17.f;
 
 
 #pragma mark create button method
-+ (UIButton *)buttonWithTitle:(NSString *)title {
-    return [self buttonWithTitle:title fontSize:ZUIKitButtonDefaultFontSize];
-}
-
-+ (UIButton *)buttonWithTitle:(NSString *)title fontSize:(CGFloat)fontSize {
-    return [self buttonWithTitle:title fontSize:fontSize titleColor:[UIColor blackColor]];
-}
-
-+ (UIButton *)buttonWithTitle:(NSString *)title fontSize:(CGFloat)fontSize titleColor:(UIColor *)titleColor {
-    return [self buttonWithTitle:title fontSize:fontSize titleColor:titleColor handler:nil];
-}
-
-+ (UIButton *)buttonWithTitle:(NSString *)title handler:(void (^)(id))handler {
-    return [self buttonWithTitle:title fontSize:ZUIKitButtonDefaultFontSize handler:handler];
-}
-
-+ (UIButton *)buttonWithTitle:(NSString *)title fontSize:(CGFloat)fontSize handler:(void (^)(id))handler {
-    return [self buttonWithTitle:title fontSize:fontSize titleColor:[UIColor blackColor] handler:handler];
-}
-
-+ (UIButton *)buttonWithTitle:(NSString *)title fontSize:(CGFloat)fontSize titleColor:(UIColor *)titleColor handler:(void (^)(id))handler {
-    return [self buttonWithImage:nil title:title fontSize:fontSize titleColor:titleColor handler:handler];
-}
-
-+ (UIButton *)buttonWithImage:(UIImage *)image {
-    return [self buttonWithImage:image title:nil];
-}
-
-+ (UIButton *)buttonWithImage:(UIImage *)image title:(NSString *)title {
-    return [self buttonWithImage:image title:title fontSize:ZUIKitButtonDefaultFontSize];
-}
-
-+ (UIButton *)buttonWithImage:(UIImage *)image title:(NSString *)title fontSize:(CGFloat)fontSize {
-    return [self buttonWithImage:image title:title fontSize:fontSize titleColor:[UIColor blackColor]];
-}
-
-+ (UIButton *)buttonWithImage:(UIImage *)image title:(NSString *)title fontSize:(CGFloat)fontSize titleColor:(UIColor *)titleColor {
-    return [self buttonWithImage:image title:title fontSize:fontSize titleColor:titleColor handler:nil];
-}
-
-+ (UIButton *)buttonWithImage:(UIImage *)image title:(NSString *)title fontSize:(CGFloat)fontSize titleColor:(UIColor *)titleColor handler:(void (^)(id))handler {
++ (UIButton *)buttonWithImage:(UIImage *)image handler:(void (^)(id))handler {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setTitle:title forState:UIControlStateNormal];
-    button.titleLabel.font = [UIFont systemFontOfSize:fontSize];
-    [button setTitleColor:titleColor forState:UIControlStateNormal];
     if (image) {
         [button setImage:image forState:UIControlStateNormal];
     }
@@ -124,6 +81,29 @@ static const CGFloat ZUIKitButtonDefaultFontSize = 17.f;
     return button;
 }
 
++ (UIButton *)buttonWithTitle:(NSString *)title handler:(void (^)(id))handler {
+    return [self buttonWithTitle:title fontSize:ZUIKitButtonTitleDefaultFontSize handler:handler];
+}
+
++ (UIButton *)buttonWithTitle:(NSString *)title fontSize:(CGFloat)fontSize handler:(void (^)(id))handler {
+    return [self buttonWithTitle:title fontSize:fontSize titleColor:[UIColor blackColor] handler:handler];
+}
+
++ (UIButton *)buttonWithTitle:(NSString *)title titleColor:(UIColor *)titleColor handler:(void (^)(id))handler {
+    return [self buttonWithTitle:title fontSize:ZUIKitButtonTitleDefaultFontSize titleColor:titleColor handler:handler];
+}
+
++ (UIButton *)buttonWithTitle:(NSString *)title fontSize:(CGFloat)fontSize titleColor:(UIColor *)titleColor handler:(void (^)(id))handler {
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setTitle:title forState:UIControlStateNormal];
+    button.titleLabel.font = [UIFont systemFontOfSize:fontSize];
+    [button setTitleColor:titleColor forState:UIControlStateNormal];
+    
+    if (handler) {
+        [button bk_addEventHandler:handler forControlEvents:UIControlEventTouchUpInside];
+    }
+    return button;
+}
 
 
 #pragma mark - create textfield method
@@ -144,10 +124,6 @@ static const CGFloat ZUIKitButtonDefaultFontSize = 17.f;
 }
 
 + (UITextField *)textfieldWithPlaceholder:(NSString *)placeholder fontSize:(CGFloat)fontSize textColor:(UIColor *)textColor textAlignment:(NSTextAlignment)textAlignment placeholderAttributes:(NSDictionary<id, NSDictionary<NSAttributedStringKey, id> *> *)placeholderAttributes {
-    return [self textfieldWithPlaceholder:placeholder fontSize:fontSize textColor:textColor textAlignment:textAlignment placeholderAttributes:placeholderAttributes delegateTarget:nil];
-}
-
-+ (UITextField *)textfieldWithPlaceholder:(NSString *)placeholder fontSize:(CGFloat)fontSize textColor:(UIColor *)textColor textAlignment:(NSTextAlignment)textAlignment placeholderAttributes:(NSDictionary<id, NSDictionary<NSAttributedStringKey, id> *> *)placeholderAttributes delegateTarget:(id<UITextFieldDelegate>)delegateTarget {
     UITextField *textfield = [[UITextField alloc] init];
     textfield.placeholder = placeholder;
     textfield.font = [UIFont systemFontOfSize:fontSize];
@@ -163,11 +139,6 @@ static const CGFloat ZUIKitButtonDefaultFontSize = 17.f;
         }];
         textfield.attributedPlaceholder = attributedPlaceholder;
     }
-    
-    if (delegateTarget && [delegateTarget conformsToProtocol:@protocol(UITextFieldDelegate)]) {
-        textfield.delegate = delegateTarget;
-    }
-    
     return textfield;
 }
 
