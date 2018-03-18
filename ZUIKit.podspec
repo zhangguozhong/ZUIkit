@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ZUIKit"
-  s.version      = "1.0.4"
+  s.version      = "1.0.6"
   s.summary      = "封装系统控件的初始化方法，便于纯代码界面开发复用."
 
   # This description is used to generate tags and improve search results.
